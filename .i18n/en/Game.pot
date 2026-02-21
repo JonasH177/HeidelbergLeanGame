@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.22.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-02\n"
+"POT-Creation-Date: 2026-02-15\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -9,15 +9,428 @@ msgstr "Project-Id-Version: Game v4.22.0\n"
 "Content-Transfer-Encoding: 8bit"
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Use 'exact «{cb_is_one}»' to finish this part of the proof"
+msgid "Simplify the definition of unit (which asserts the existence of a multiplicative inverse)."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
 msgid "Now add everything together in one exact statement."
 msgstr ""
 
+#: Game.Levels.DemoWorld.L03
+#: Game.Levels.DemoWorld.L04
+msgid "Again, try to `intro` all the way."
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "intermediate goal solved! 🎉"
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
+msgid "Start by introducing a proof of the equality p = u * v into your context."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L05
+msgid "Now it is time for the second implication introduced by `constructor`."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Write 'have p_div_a_or_b : p ∣ a ∨ p ∣ b := ..."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
+msgid "Rewrite using 'rewrite [Nat.mul_one «{p}»]' to convert p * 1 to p."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L02
+msgid "States that zero is never equal to a successor. Takes in a single argument – one natural number `n : Nat`. `zero_ne_succ n` returns `0 ≠ n+1`."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L01
+msgid "Try breaking up the double implication using a tactic"
+msgstr ""
+
+#: Game.Levels.StrIneqWorld
+msgid "In this world, we construct a strict ordering, denoted by `<ₛ`, on the naturals `Nat`, which will be defined to satisfy certain axioms which we want to hold in a strict ordering. Based on this strict odering `<ₛ` we will construct a strict inequality, denoted by `#`, on the naturals `Nat`, which we will define by `m # n ↔ (m <ₛ n) ∨ (n <ₛ m)`. Finally, we will prove some foundational results about this strict inequality."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L04
+msgid "States that the strict inequality defined on `Three` is not tight, that is, `x y : Three` and `¬(x # y)` does not always imply"
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
+msgid "Start by applying symmetry to reverse the equality."
+msgstr ""
+
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Simplify the definition of unit (which asserts the existence of a multiplicative inverse)."
+msgid "Focus on the left-hand side using 'lhs'."
+msgstr ""
+
+#: Game
+msgid "Welcome to the Heidelberg Lean Game!\n"
+"\n"
+"In this game, we explore a single world with 6 levels.\n"
+"The final level (Level 6) proves that every natural number which is prime is irreducible.\n"
+"\n"
+"The second world treats the equality relation `=` on the natural numbers ℕ. The final theorem of the world will be to establish that the equality relation on the naturals is decidable, constructively.\n"
+"(Note: This means, that in vanilla lean, all the theorems do not require any of the axioms `[propext]`, `[Classical.choice]`, `[Quot.sound]`, that is, propositional extensionality, choice, and the soundness of the quotient construction.)\n"
+"\n"
+"The third world covers elemenetary properties of strict orderings and strict inequalities. In the first half we will prove positive results, and continue to show that these results are sharp in the second half of the world, by constructing a common counterexample."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
+msgid "Excellent! You have successfully proven that under the given conditions, a is a unit."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Begin with 'intro h' to bring the whole hypothesis into scope."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L01
+msgid "Try to `intro`duce all relevant objects and statements from the `goal` statement, thereby breaking it apart."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Use exact ⟨«{p_prime}», «{p_div_a}», Eq.symm «{p_is_ab}»⟩"
+msgstr ""
+
+#: Game.Inventory
+msgid "This theorem, proved in Level 2, shows that if a number p equals the product u * v,\n"
+"then p divides u * v."
+msgstr ""
+
+#: Game.Inventory
+msgid "This theorem, proved in Level 5, shows that if\n"
+"  p is prime,\n"
+"  p divides b, and\n"
+"  p = b * a,\n"
+"then a is a unit."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
+msgid "Construct the two required components of the unit definition using the constructor tactic. Use constructor · proof of first statement · proof of second statement"
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Next, we prove 1 = «{c}» * b using a 'have' block. Remember that when using 'by', the subsequent proof must be indented."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
+msgid "Decompose the hypothesis with 'rcases «{h}» with ⟨p_prime, p_dvd_b, p_eq_ba⟩'."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Use 'apply Eq.symm' to reverse the equality."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Same start as above: provide the witness «{c}» for b being a unit."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Proving b is a Unit"
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "In this final level, we prove that every prime number is irreducible.\n"
+"That is, if a number p is prime, then for any factorization p = u * v, at least one of u or v must be a unit.\n"
+"This is a key property in number theory."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Apply the cancellation property (from Level 1) to deduce that 1 = «{c}» * b."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible
+msgid "PrimeImpliesIrreducible"
+msgstr ""
+
+#: Game.Levels.StrictInequality.L05
+msgid "Try to gradually prove that the statement `«{h₀}»` is contradictory. When in editor mode (top right >_ button), then you can use the `<;>` command, which will try the following command at each subexpression of the targeted statement. For instance, `<;> trivial` tries trivial at all options. It is not necessary to use `<;>` to solve this goal quickly however."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "You can use 'apply b_unit p a b"
+msgstr ""
+
+#: Game.Levels.DemoWorld.L06
+msgid "Repeat the case analysis on `«{n'}»`."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
+msgid "Great work! You have established the substitution property in ℕ."
+msgstr ""
+
+#: Game
+msgid "You should use this game as a template for your own game and add your own levels."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
+msgid "Start by breaking apart the proof h into its two components. Use rcases «{h}» with ⟨ ca_eq_cb, c_ne_0 ⟩"
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
+msgid "From the divisibility p ∣ b, extract a witness c such that b = p * c."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
+msgid "Break apart the conjunction in the hypothesis into its components."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
+msgid "In this level, we prove that if a natural number p equals the product of two numbers u and v,\n"
+"then p divides the product u * v."
+msgstr ""
+
+#: Game.Inventory
+msgid "This is a counterexample structure for a strict inequality to be neither tight, nor cotransitive.  The `class` `Three` consists of a set `{x, y, z}` and a strict ordering relation on it, which we call `<ₛ` (you can type it with '<\\_s') as well. The relation is given by the following:\n"
+"for `a b : Three`, we have `a <ₛ b` if and only if `a = .x ∧ b = .z`. You can refer to the elements of `Three` by writing `Three.x`, or `.x` for short, if the context is clear, and `Three.y` and `Three.Three` for the other two elements."
+msgstr ""
+
+#: Game
+msgid "Heidelberg Lean Game"
+msgstr ""
+
+#: Game.Levels.DemoWorld
+msgid "In this world, the decidability of the equality relation on the natural numbers under the constructive framework is shown. Note that the naturals here are defined inductively, so n∈ℕ means `n=0 ∨ n=succ(k)` for some natural k∈ℕ."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L03
+#: Game.Levels.StrictInequality.L03
+msgid "Strict Inequality is connected wrt. Order Inequality."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L05
+msgid "States that `#` is not a cotransitive relation on `Three`."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L02
+msgid "Show that zero can never be a successor."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "In this level, we prove that under the following conditions b is a unit.\n"
+"That is, if p is prime, p divides a, and p = a * b, then b must be a unit.\n"
+"Recall that a number b is a unit if there exists some m and k with m * b = b * k = 1."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "After rewriting, apply the cancellation property. This line must be indented further inside the 'by' block."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L06
+msgid "Now, you can `intro n` without problems."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L02
+msgid "Introduce hypothesis to break apart the goal."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Rewrite the left-hand side using the identity '← Nat.mul_one p'."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
+msgid "Finish with 'exact «{p_eq_uv}»' to complete the proof."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L06
+msgid "This time, you do **not** `intro`duce the variables all the way, but ideally only `m` and leave `n` free."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
+msgid "Use 'apply Eq.symm' to swap both sides of the equality."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Introduce the hypothesis into your context."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Finally, prove the main irreducibility condition: for any factors a and b such that p = a * b, either a or b is a unit. Start by introducing arbitrary factors a and b and assuming that p = a * b."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L01
+msgid "`#` is consistent, that is, `¬(x # y) ↔ ¬((x <ₛ y) ∨ (y <ₛ x))` for all `x y : X`, where `X` is a type equipped with a strict ordering (`SO`)."
+msgstr ""
+
+#: Game.Inventory
+msgid "The `x` element of the structure `Three`."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
+msgid "Simplify the definition of 'unit' (which requires providing an inverse for u)."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L01
+msgid "Successor `succ` function is injective. To arrive at a equality (the rightmost term of the statement), feed it three arguments – two natural number `m : Nat` and `n : Nat`, and a hypothesis that states `h : m = n`. In Summary, this is written as `eq_imp_succ_eq m n h` and evaluates to `m+1 = n+1`."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
+msgid "Introduce the hypothesis into the context."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
+msgid "Use the fact that multiplying by one does not change a number to simplify the equation."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L04
+msgid "Strict Inequality is not Tight"
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Define an auxiliary statement: 'have p_div_ab : p ∣ (a*b) := ..."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
+msgid "Use 'rewrite [Nat.mul_assoc] at «{p_eq_uv}»' so that «{p_eq_uv}» becomes p = p * (q * v)."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "In the case p ∣ b, use Level 5's theorem 'a_unit' to conclude that a is a unit."
+msgstr ""
+
+#: Game.Inventory
+msgid "This theorem, proved in Level 1, states that if\n"
+"  c * a = c * b\n"
+"and\n"
+"  0 < c,\n"
+"then we can cancel c to conclude that a = b."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Begin by assuming that p is prime."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Next, prove that p is not a unit with the defintion of prime."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
+msgid "We want to use Nat.mul_left_cancel, but for that, we need that c is positive. You can add a new proposition with have. The syntax is `have name : statement := proof`."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L01
+msgid "In the first couple levels, we will prove some auxiliary results about ℕ and the successor function `Nat.succ`. Show that for any natural numbers `m` and `n`, that if `m = n`, then `m+1 = n+1`."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Use the property from the prime definition"
+msgstr ""
+
+#: Game.Levels.StrictInequality.L01
+msgid "In both cases, we can introduce all relevant hypothesis from the `goal`."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
+msgid "Cancellation in ℕ"
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Now, start with proving that p ≠ 0 with the definition of prime."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Now, use case analysis on the disjunction p ∣ a ∨ p ∣ b to handle both cases separately. You can do this with rcases «{p_div_a_or_b}» with p_div_a | p_div_b."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
+msgid "Simplify the definition of divisibility. (Recall that p ∣ (u * v) means there exists a natural number k such that p * k = u * v.)"
+msgstr ""
+
+#: Game.Inventory
+msgid "This theorem, proved in Level 4, shows that under the conditions\n"
+"  p is prime,\n"
+"  p divides a, and\n"
+"  p = a * b,\n"
+"the number b is a unit."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
+msgid "Now, we need to prove 1 = «{c}» * a. We can use the same approach as before, but we will need to apply symmetry at the end."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L04
+msgid "Now, the goal is closeable with the `exact` application of a result you already proved. Try to use it and pattern match your objects to it."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L06
+msgid "Now we've come to the point where you can reduce the goal to a simpler goal using the past theorem."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L03
+msgid "Congruence in the function argument: if `a₁ = a₂` then `f a₁ = f a₂` for any (nondependent) function `f`. This is more powerful than it might look at first, because you can also use a lambda expression for `f` to prove that `<something containing a₁> = <something containing a₂>`. This function is used internally by tactics like `congr` and `simp` to apply equalities inside subterms.\n"
+"\n"
+"`congrArg` takes two arguments – a function `f` to which the statement should apply, and a hypothesis `h' : x y`, stating equality for some `x y : α`. For instance let `g := fun (n : Nat) ↦ n+7` be a function. Then if for some naturals `m n : Nat`, we have the hypothesis `h : m = n`, then `congrArg g h` evaluates to `m+7 = n+7`.\n"
+"\n"
+"As a hint, consider that `pred ≅ fun (n : Nat) ↦ n.pred` is a function."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Swap both sides by applying symmetry first."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L05
+msgid "Consider what objects of `Three` in which order are a counterexample to `«{h}»`."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
+msgid "Use 'intro h' to bring the conjunction (u = p * q) ∧ (p = u * v) into scope."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L06
+msgid "Now, you can perform `induction m`. This will induct over the whole statement of `∀ (n : Nat), m = n ∨ m ≠ n`, which then can be attacked with case analysis."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
+msgid "In this level, we prove the cancellation law for natural numbers.\n"
+"That is, if multiplying two numbers by a non zero natural number gives the same result,\n"
+"then the original numbers must be equal."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L03
+msgid "Now, try to use the fact that `pred (k+1) = k` for any `k` and compose this with your hypothesis `«{h}»` and `congrArg`."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L05
+msgid "You might again try the trick of making `goal` become `False` and then rewriting your assumptions such that they are trivially contradictory."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L02
+msgid "Zero is not a successor"
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Congratulations! You have shown that every prime number is irreducible."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Finally, conclude by constructing the unit for b."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L04
+msgid "Show `#` is not a tight relation, that is, that we do not have that for all `x y : X`, that `¬(x # y) → m = n`, that is, inequality does not always imply equality.\n"
+"\n"
+"For this, it is worthwhile to look at the counterexample structure, which we gained in `Theorems`. The `class` `Three` consists of a set `{x, y, z}` and a strict ordering relation on it, which we call `<ₛ` as well. The relation is given by the following:\n"
+"for `a b : Three`, we have `a <ₛ b` if and only if `a = .x ∧ b = .z`. You can refer to the elements of `Three` by writing `Three.x`, or `.x` for short, if the context is clear, and `Three.y` and `Three.z` for the other two elements.\n"
+"\n"
+"To prove the statement, think about which elements' relations in `Three` refute the positive version of the statement, and use the `have` and `unfold` tactics to make progress."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
+msgid "Start by introducing the hypothesis into your context."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
+msgid "Final Boss"
+msgstr ""
+
+#: Game.Levels.DemoWorld.L01
+msgid "The successor map preserves equality"
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Use 'exact «{cb_is_one}»' to finish this part of the proof"
 msgstr ""
 
 #: Game.Inventory
@@ -48,24 +461,8 @@ msgid "A prototype for this game was created as part of the HEGL (Heidelberg Exp
 "- Florent Schaffhauser"
 msgstr ""
 
-#: GameServer.RpcHandlers
-msgid "intermediate goal solved! 🎉"
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
-msgid "Start by introducing a proof of the equality p = u * v into your context."
-msgstr ""
-
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
 msgid "Use the substitution property from Level 3 to obtain the proposition p = p * («{c}» * b)."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Write 'have p_div_a_or_b : p ∣ a ∨ p ∣ b := ..."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
-msgid "Rewrite using 'rewrite [Nat.mul_one «{p}»]' to convert p * 1 to p."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
@@ -74,6 +471,10 @@ msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
 msgid "Now you can use Nat.mul_left_cancel to finish the proof. You can do this with the exact tactic."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L05
+msgid "Show `#` is not a cotransitive relation. Similarly to previously, you can make extensive use of `have` and `unfold`."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
@@ -89,16 +490,26 @@ msgstr ""
 msgid "Construct the three required components of the irreducible definition using the constructor tactic. Use constructor · proof of first statement · proof of second statement · proof of third statement"
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "Apply the cancellation law (from Level 1) to deduce that 1 = «{c}» * a."
-msgstr ""
-
 #: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
 msgid "Equality Implies Divisibility"
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "Start by applying symmetry to reverse the equality."
+msgid "Apply the cancellation law (from Level 1) to deduce that 1 = «{c}» * a."
+msgstr ""
+
+#: Game.Inventory
+msgid "If the main goal's target type is an inductive type, `constructor` solves it with the first matching constructor, or else fails.\n"
+"\n"
+"A goal of the form `P ∨ Q` for some propositions `P Q : Prop` can be broken apart by `constructor`, breaking apart the goal and producing two new goals – the first being `P` and the second one being `Q`."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L01
+msgid "Strict Inequality is Consistent"
+msgstr ""
+
+#: Game.Levels.StrictInequality.L02
+msgid "Given the expansion of the order inequality, we now have multiple disjunctions, based on whether `x <ₛ y` or `y <ₛ x`. Use `rcases «{h}» with «{h}»₀ | «{h}»₁` to break apart the hypothesis `«{h}»` into two, and proceed from there."
 msgstr ""
 
 #: GameServer.RpcHandlers
@@ -110,49 +521,39 @@ msgid "In this level, we prove a useful substitution property for natural number
 "If u = p * q and p = u * v, then we can rewrite p as p * (q * v)."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
-msgid "Replace u in the second equality with p * q using the equality u = p * q."
+#: Game.Levels.StrictInequality.L04
+msgid "Try to gradually prove that the statement `«{h₀}»` is contradictory, potentially making use of various `have` statements."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Focus on the left-hand side using 'lhs'."
+#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
+msgid "Replace u in the second equality with p * q using the equality u = p * q."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
 msgid "Use have c_pos : 0 < c := Nat.pos_of_ne_zero «{c_ne_zero}»"
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "Excellent! You have successfully proven that under the given conditions, a is a unit."
+#: Game.Inventory
+msgid "The predecessor of a natural number is one less than it. The predecessor of `0` is defined to be `0`. Can result being useful by trivially reducing `pred (n+1) = n` for some natural `n : Nat`."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L05
+msgid "Strict Inequality is not Cotransitive"
+msgstr ""
+
+#: Game.Levels.DemoWorld.L01
+#: Game.Levels.DemoWorld.L02
+#: Game.Levels.DemoWorld.L03
+#: Game.Levels.DemoWorld.L04
+msgid "This last message appears if the level is solved."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
 msgid "Use exact Nat.mul_left_cancel «{c_pos}» «{ca_eq_cb}»"
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Begin with 'intro h' to bring the whole hypothesis into scope."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Use exact ⟨«{p_prime}», «{p_div_a}», Eq.symm «{p_is_ab}»⟩"
-msgstr ""
-
 #: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
 msgid "Finish by applying the symmetry of the equality to conclude the proof."
-msgstr ""
-
-#: Game.Inventory
-msgid "This theorem, proved in Level 2, shows that if a number p equals the product u * v,\n"
-"then p divides u * v."
-msgstr ""
-
-#: Game.Inventory
-msgid "This theorem, proved in Level 5, shows that if\n"
-"  p is prime,\n"
-"  p divides b, and\n"
-"  p = b * a,\n"
-"then a is a unit."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible
@@ -170,25 +571,16 @@ msgstr ""
 msgid "Congratulations! You have proven that if p equals u * v, then p divides u * v."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "Construct the two required components of the unit definition using the constructor tactic. Use constructor · proof of first statement · proof of second statement"
+#: Game.Levels.DemoWorld.L05
+msgid "If a hypothesis is of the form `P ∨ Q`, then you usually want to do case analysis on these subcases. This can be achieved with the new tactic `rcases`. The syntax for unpacking the hypothesis `«{h}»` is given by `rcases «{h}» with «{h}»₀ | «{h}»₁`. Similarly to `constructor`, it will give you two goals from your given one, one for each subcase."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Next, we prove 1 = «{c}» * b using a 'have' block. Remember that when using 'by', the subsequent proof must be indented."
+#: Game.Levels.DemoWorld.L06
+msgid "States that the equality relation `=` in the naturals `Nat` is decidable, that is, that for any naturals `m n : Nat`, we either have `m = n` or `¬(m = n)`<=>`m ≠ n`, that is, `(m = n) ∨ (m ≠ n)`."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Use 'apply Eq.symm' to reverse the equality."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "Decompose the hypothesis with 'rcases «{h}» with ⟨p_prime, p_dvd_b, p_eq_ba⟩'."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Same start as above: provide the witness «{c}» for b being a unit."
+#: Game.Levels.DemoWorld.L01
+msgid "Use the `rw` tactic to rewrite your `goal`. In this instance, using `rw [«{h}»]` completes the proof."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
@@ -196,33 +588,25 @@ msgid "Now, we need to prove 1 = «{c}» * b. We can use the same approach as be
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Proving b is a Unit"
+msgid "Decompose the hypothesis into its constituent parts."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
 msgid "Since p is prime, it must divide at least one of the factors; use that to get p ∣ a ∨ p ∣ b."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Decompose the hypothesis into its constituent parts."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "In this final level, we prove that every prime number is irreducible.\n"
-"That is, if a number p is prime, then for any factorization p = u * v, at least one of u or v must be a unit.\n"
-"This is a key property in number theory."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Apply the cancellation property (from Level 1) to deduce that 1 = «{c}» * b."
+#: Game.Levels.DemoWorld.L04
+#: Game.Levels.DemoWorld.L05
+#: Game.Levels.DemoWorld.L06
+msgid "Successor map preserves inequality"
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
 msgid "Again, use the substitution property from Level 3 to obtain the proposition p = p * («{c}» * b)."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible
-msgid "PrimeImpliesIrreducible"
+#: Game.Levels.StrictInequality.L02
+msgid "Show that the `#` relation is symmetric."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
@@ -238,24 +622,30 @@ msgstr ""
 msgid "Well done! You have successfully proven that cancellation holds in ℕ."
 msgstr ""
 
+#: Game.Levels.StrIneqWorld
+msgid "Strict Inequality on ℕ"
+msgstr ""
+
 #: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
 msgid "Provide a witness for the existential quantifier. Here, the number 1 will work."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "You can use 'apply b_unit p a b"
+#: Game.Levels.DemoWorld.L06
+msgid "Finally, we will now prove the main theorem, the decidability of equality in the naturals.\n"
+"\n"
+"This can be done by doing `induction` on the variable `m`, where it is important that the induction occurs while `n` is still a **free** variable – that is, inducting over `∀ n, P n`, where `P : Nat → Prop` is some statement dependent of `n`. Then, perform case analysis with `cases` (or also possible just another `induction` instead) over the remaining variable `n`. This will be structurally similar to the proof of `step` of the last level."
+msgstr ""
+
+#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
+msgid "Use 'rcases «{p_dvd_a}» with ⟨c, a_eq_pc⟩' to obtain a natural number c and the equality a = p * c."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
 msgid "Prime Implies Irreducible"
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
-msgid "Great work! You have established the substitution property in ℕ."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Use 'rcases «{p_dvd_a}» with ⟨c, a_eq_pc⟩' to obtain a natural number c and the equality a = p * c."
+#: Game.Levels.DemoWorld.L04
+msgid "Applying a Negation (`¬P`) to the goal `False` will result in its original form (`P`). Try to use this with `«{h}»`."
 msgstr ""
 
 #: Game.Inventory
@@ -264,24 +654,20 @@ msgid "Multiplication is commutative in ℕ.\n"
 "  a * b = b * a."
 msgstr ""
 
-#: Game
-msgid "You should use this game as a template for your own game and add your own levels."
-msgstr ""
-
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
 msgid "Break the hypothesis into its components: p is prime, p divides b, and p = b * a."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
-msgid "Conclude the proof by using the equality obtained."
+#: Game.Levels.DemoWorld.L04
+msgid "Successor function preserves inequality. Takes in three arguments – two naturals `m n : Nat`, and one hypothesis `h : m ≠ n`, which states that `m` and `n` are not equal (as defined by `¬(m = n)`). `neq_imp_succ_neq m n h` evaluates to `m+1 ≠ n+1`."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
 msgid "Within the 'by' block, start by rewriting the left-hand side of the equality. The 'conv' tactic allows you to focus on a specific part of an expression. Use conv at «{p_eq_pcb}» => ..."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
-msgid "Start by breaking apart the proof h into its two components. Use rcases «{h}» with ⟨ ca_eq_cb, c_ne_0 ⟩"
+#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
+msgid "Conclude the proof by using the equality obtained."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
@@ -289,15 +675,7 @@ msgid "Case 2: Proving a is a Unit"
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "From the divisibility p ∣ b, extract a witness c such that b = p * c."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
 msgid "Apply the substitution property (from Level 3) to rewrite p as p * («{c}» * a)."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
-msgid "Break apart the conjunction in the hypothesis into its components."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
@@ -308,27 +686,20 @@ msgstr ""
 msgid "This theorem allows you to cancel a positive multiplier from both sides of an equality in ℕ."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
-msgid "In this level, we prove that if a natural number p equals the product of two numbers u and v,\n"
-"then p divides the product u * v."
-msgstr ""
-
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
 msgid "Use the substitution property with: 'have p_eq_pcb : p = p * («{c}» * b) := substitution_in_Nat p «{c}» a b ⟨«{a_eq_pc}», «{p_eq_ab}»⟩'."
 msgstr ""
 
-#: Game
-msgid "Heidelberg Lean Game"
+#: Game.Levels.DemoWorld.L06
+msgid "Very good, you've just shown that the `=` is a decidable relation on ℕ from the ground up. You have completed the world and can continue onto other worlds."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
 msgid "Use 'dsimp only [Dvd.dvd]' to unfold the definition and expose the existential quantifier."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "In this level, we prove that under the following conditions b is a unit.\n"
-"That is, if p is prime, p divides a, and p = a * b, then b must be a unit.\n"
-"Recall that a number b is a unit if there exists some m and k with m * b = b * k = 1."
+#: Game.Levels.DemoWorld.L02
+msgid "Once again, try to `intro` all the way."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
@@ -339,8 +710,8 @@ msgstr ""
 msgid "From the divisibility p ∣ a, extract a witness c such that a = p * c."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "After rewriting, apply the cancellation property. This line must be indented further inside the 'by' block."
+#: Game.Levels.DemoWorld.L05
+msgid "States that equality between `m : Nat` and `n : Nat` is decidable if and only if the equality between `m+1` and `n+1` is decidable. Takes in two naturals `m n : Nat`, with `step m n` evaluating to `(m+1 = n+1 ∨ m+1 ≠ n+1) ↔ (m = n ∨ m ≠ n)`. Usually, when using the theorem, we will only be interested in one implication at a time, instead of the whole equivalence. Obtaining the underlying implications is achieved by grouping the statement in parenthesis and postponing `.mp`, for the forward implication (\"modus ponens\"), or postponing `.mpr`, for the reverse direction. Thus, `(step m n).mp` evaluates to `(m+1 = n+1 ∨ m+1 ≠ n+1) → (m = n ∨ m ≠ n)` and `(step m n).mpr` evaluates to `(m = n ∨ m ≠ n) → (m+1 = n+1 ∨ m+1 ≠ n+1)`. These are now statements that take in a hypothesis `h` of the appropriate form and return the consequence. Hence, e.g., if `h : (m+1 = n+1 ∨ m+1 ≠ n+1)`, then `(step m n).mp h` evaluates to `(m = n ∨ m ≠ n)`."
 msgstr ""
 
 #: Game.Inventory
@@ -359,36 +730,32 @@ msgstr ""
 msgid "Use Level 2's theorem"
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Rewrite the left-hand side using the identity '← Nat.mul_one p'."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
-msgid "Finish with 'exact «{p_eq_uv}»' to complete the proof."
-msgstr ""
-
 #: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
 msgid "Start with 'intro p_prime' to assume that p is prime and add it to your context."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "Use 'apply Eq.symm' to swap both sides of the equality."
+#: Game.Levels.DemoWorld.L06
+msgid "Perform case analysis on `«{n}»`. This can be done 'cleanly' with `cases` or instead with `induction` – the difference being that `induction` will give you a 'useless' induction hypothesis later, which can however be ignored."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Introduce the hypothesis into your context."
+#: Game.Levels.StrictInequality.L03
+msgid "Strict Inequality is Connected"
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Finally, prove the main irreducibility condition: for any factors a and b such that p = a * b, either a or b is a unit. Start by introducing arbitrary factors a and b and assuming that p = a * b."
+#: Game.Levels.DemoWorld.L03
+msgid "Successor map is injective"
+msgstr ""
+
+#: Game.Levels.DemoWorld.L05
+msgid "Its time to use a new tactic. We want to break apart the if and only if statement (`P ↔ Q`). This can be achieved with `constructor`. It applies the transformation `(P ↔ Q) ==> ((P → Q) ∨ (Q → P))`. This will lead you two have two goals, first the forwards implication and second the backwards implication."
+msgstr ""
+
+#: Game.Inventory
+msgid "The `y` element of the structure `Three`."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
 msgid "Execute 'rewrite [«{u_eq_pq}»] at «{p_eq_uv}»' to substitute u with p * q in «{p_eq_uv}»."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "Simplify the definition of 'unit' (which requires providing an inverse for u)."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
@@ -401,32 +768,12 @@ msgstr ""
 msgid "Use 'apply p_prime.not_zero' to directly use the property from the prime definition."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
-msgid "Introduce the hypothesis into the context."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
-msgid "With 'exact Eq.symm «{p_eq_uv}»' you can complete the proof."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
-msgid "Use the fact that multiplying by one does not change a number to simplify the equation."
-msgstr ""
-
 #: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
 msgid "Use 'intro h', this creates a new element h to your local context."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Define an auxiliary statement: 'have p_div_ab : p ∣ (a*b) := ..."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
-msgid "Use 'rewrite [Nat.mul_assoc] at «{p_eq_uv}»' so that «{p_eq_uv}» becomes p = p * (q * v)."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "In the case p ∣ b, use Level 5's theorem 'a_unit' to conclude that a is a unit."
+#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
+msgid "With 'exact Eq.symm «{p_eq_uv}»' you can complete the proof."
 msgstr ""
 
 #: Game.Inventory
@@ -441,20 +788,8 @@ msgid "This Theorem, proved in Level 6, shows that if\n"
 "then p is irreducible."
 msgstr ""
 
-#: Game.Inventory
-msgid "This theorem, proved in Level 1, states that if\n"
-"  c * a = c * b\n"
-"and\n"
-"  0 < c,\n"
-"then we can cancel c to conclude that a = b."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Next, prove that p is not a unit with the defintion of prime."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Begin by assuming that p is prime."
+#: Game.Levels.StrictInequality.L01
+msgid "We will prove the foundational result that `#` is a consistent inequality. [[If this level crashes, reload the page. I do not know why this is happening. Should get fixed before shipping.]]"
 msgstr ""
 
 #: Game
@@ -465,36 +800,44 @@ msgstr ""
 msgid "Apply the associativity of multiplication to rearrange the product into the desired form."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
-msgid "We want to use Nat.mul_left_cancel, but for that, we need that c is positive. You can add a new proposition with have. The syntax is `have name : statement := proof`."
-msgstr ""
-
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
 msgid "Apply the cancellation law (from Level 1) to deduce that «{c}» * a = 1."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Use the property from the prime definition"
+#: Game.Levels.StrictInequality.L02
+msgid "Now, only one of the cases in the `goal` is true, `left` respective `right` to navigate to the relevant case in the `goal`."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L06
+msgid "Now we arrived at the case where `m` = `«{n}»+1` is a successor."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L03
+msgid "Show that succ(m)=succ(n) -> m=n for any m,n natural. You have the new tactic `exact`, the theorem `congrArg` and the definition `pred`."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
 msgid "Use 'exact cancellation_in_Nat («{c}» * b) 1 p ⟨Eq.symm «{p_eq_pcb}», «{p_prime}».not_zero⟩' to finish this part of the proof."
 msgstr ""
 
+#: Game.Levels.StrictInequality.L04
+msgid "Consider which two objects of `Three` in what order are a counterexample to the statement `«{h}»`. If `r` and `s` are your two elements in order, then exhibit the contradictory statement by writing `have «{h}»₀ := «{h}» r s`."
+msgstr ""
+
 #: GameServer.RpcHandlers
 msgid "level completed! 🎉"
+msgstr ""
+
+#: Game.Levels.DemoWorld.L02
+msgid "The goal is `False`, that is we have to show that the current state -- that is, the hypotheses (in this case only `«{h}»`) -- are contradictory. There is a tactic for that."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
 msgid "Use 'rcases p_dvd_b with ⟨c, b_eq_pc⟩' to obtain c and the equality b = p * c."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
-msgid "Cancellation in ℕ"
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Now, start with proving that p ≠ 0 with the definition of prime."
+#: Game.Levels.StrictInequality.L03
+msgid "Show that `#` is connected, that is, that if `x # y`, then either"
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
@@ -505,59 +848,39 @@ msgstr ""
 msgid "With left or right, you can go to the left or right side of the disjunction unit a ∨ unit b."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Now, use case analysis on the disjunction p ∣ a ∨ p ∣ b to handle both cases separately. You can do this with rcases «{p_div_a_or_b}» with p_div_a | p_div_b."
+#: Game.Levels.DemoWorld.L05
+msgid "Now we have the necessary tools to prove the most difficult `step` in the decidability of the equality relation `=` in ℕ. Since we will (want) to prove the decidability by double case analysis on naturals `m` and `n`, we will obtain four cases based on the `inductive` pattern of `Nat`, yielding `case 0: (m,n) = (0, 0)`, `case 1: (m,n) = (0, succ)`, `case 2: (m,n) = (succ, 0)`, `case 3: (m,n) = (succ, succ)`. Since the decidability statement is given by `∀m,n ∈ ℕ, (m = n) ∨ (m ≠ n)`, the double case analysis will give us `∀m,n ∈ ℕ, (m = n) ∨ (m ≠ n) ↔ (m+1 = n+1 ∨ m+1 ≠ n+1)` in `case 3` – the final case. This final case is exactly what we will prove here.\n"
+"\n"
+"Technically, we will only use the reverse direction (modus ponens reverse `.mpr`) of this statement in the later proofs, however it is good practice to prove the whole equivalence."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV02_EqImplDiv
-msgid "Simplify the definition of divisibility. (Recall that p ∣ (u * v) means there exists a natural number k such that p * k = u * v.)"
-msgstr ""
-
-#: Game.Inventory
-msgid "This theorem, proved in Level 4, shows that under the conditions\n"
-"  p is prime,\n"
-"  p divides a, and\n"
-"  p = a * b,\n"
-"the number b is a unit."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "Now, we need to prove 1 = «{c}» * a. We can use the same approach as before, but we will need to apply symmetry at the end."
+#: Game.Levels.StrictInequality.L02
+msgid "Now, we want to 'unpack' the definition of `#` in the goal as well as in the hypothesis `«{h}»`. To achieve this, write `unfold orderIneq`, to unpack `#` at the `goal`, and `unfold oderIneq at `«{h}»`, to unpack `#` at hypothesis `«{h}»`. After this, we can manipulate the expression with more precision."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
 msgid "Now, use Level 4's theorem 'b_unit' to conclude that b is a unit in the case p ∣ a."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Swap both sides by applying symmetry first."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV03_Substitution
-msgid "Use 'intro h' to bring the conjunction (u = p * q) ∧ (p = u * v) into scope."
+#: Game.Levels.StrictInequality.L02
+#: Game.Levels.StrictInequality.L02
+msgid "Strict Inequality is symmetric"
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
 msgid "Provide the witness «{c}» for a being a unit."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV01_CancellationInNat
-msgid "In this level, we prove the cancellation law for natural numbers.\n"
-"That is, if multiplying two numbers by a non zero natural number gives the same result,\n"
-"then the original numbers must be equal."
+#: Game.Inventory
+msgid "The `z` element of the structure `Three`."
+msgstr ""
+
+#: Game.Levels.DemoWorld.L03
+msgid "Successor function is injective. Takes in three arguments – two naturals `m n : Nat`, and one hypothesis `h : m+1 = n+1`, which states that the successors of `m` and `n` are equal. `succ_inj m n h` evaluates to `m = n`."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
 msgid "Use 'exact cancellation_in_Nat («{c}» * a) 1 p ⟨Eq.symm «{p_eq_pca}», «{p_prime}».not_zero⟩' to finish this part of the proof."
-msgstr ""
-
-#: Game
-msgid "Welcome to the Heidelberg Lean Game!\n"
-"\n"
-"In this game, we explore a single world with 6 levels.\n"
-"The final level (Level 6) proves that every natural number which is prime is irreducible.\n"
-"\n"
-"More worlds will follow, so stay tuned!"
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
@@ -572,16 +895,12 @@ msgstr ""
 msgid "Apply the 'equality_implies_divide_in_Nat' theorem (from Level 2) to conclude that p divides a * b."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Congratulations! You have shown that every prime number is irreducible."
+#: Game.Levels.DemoWorld
+msgid "Decidability on the Naturals"
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
 msgid "Write 'exists «{c}»'."
-msgstr ""
-
-#: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
-msgid "Finally, conclude by constructing the unit for b."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
@@ -592,12 +911,25 @@ msgstr ""
 msgid "Apply 'rcases «{h}» with ⟨p_prime, p_dvd_a, p_eq_ab⟩' to split the conjunction into three separate assumptions."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
-msgid "Start by introducing the hypothesis into your context."
+#: Game.Levels.DemoWorld.L04
+msgid "Show that if `m ≠ n`, then also `m+1 ≠ n+1`."
 msgstr ""
 
-#: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
-msgid "Final Boss"
+#: Game.Levels.DemoWorld.L05
+msgid "To navigate the disjunctions in the `goal`, you want to use the tactics `left` and `right`, which will focus on the respective part. If you for instance know that `P` is true, and you have the `goal: P ∨ Q`, then write `left`."
+msgstr ""
+
+#: Game.Inventory
+msgid "The strict- or order inequality, abbreviated by `#`, defined by its underlying strict ordering `<ₛ` vía `x # y ↔ (x <ₛ y) ∨ (y <ₛ x)` for any `x y : X` and `[SO X]`. You can unfold it in the goal by writing `unfold orderIneq`, or unfold it in a hypothesis `h` by writing `unfold orderIneq at h`.\n"
+"\n"
+"Note that the meaning of `#` changes according to how `<ₛ` is defined. For the first, positive results, `<ₛ` will be just a ordinary strict ordering, given by the axioms of being\n"
+"irreflexive: `∀ a : X, ¬(a <ₛ a)`,\n"
+"transitive: `∀ a b c : X, a <ₛ b ∧ b <ₛ c → a <ₛ c`,\n"
+"assymmetric: `∀ a b : X, ¬(a <ₛ b ∧ b <ₛ a)`"
+msgstr ""
+
+#: Game.Levels.StrictInequality.L02
+msgid "Strict Inequality is Symmetric"
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss

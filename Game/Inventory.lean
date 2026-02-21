@@ -186,3 +186,103 @@ def a_unit (p a b : Nat) : (prime p) ∧ (p ∣ b) ∧ (p = b * a) → unit a :=
       apply cancellation_in_Nat (c * a) 1 p ⟨Eq.symm p_eq_pca, p_prime.not_zero⟩
     rw [Nat.mul_comm]
     apply one_is_ca.symm
+
+
+
+/- # Inventory for Worlds two and three -/
+
+
+/-- If the main goal's target type is an inductive type, `constructor` solves it with the first matching constructor, or else fails.
+
+A goal of the form `P ∨ Q` for some propositions `P Q : Prop` can be broken apart by `constructor`, breaking apart the goal and producing two new goals – the first being `P` and the second one being `Q`. -/
+TacticDoc constructor
+
+/-- The predecessor of a natural number is one less than it. The predecessor of `0` is defined to be `0`. Can result being useful by trivially reducing `pred (n+1) = n` for some natural `n : Nat`. -/
+def pred := Nat.pred
+
+/-- The predecessor of a natural number is one less than it. The predecessor of `0` is defined to be `0`. Can result being useful by trivially reducing `pred (n+1) = n` for some natural `n : Nat`. -/
+DefinitionDoc pred as "pred"
+
+
+/-# Structures --- denial inequality --- strict inequality #-/
+
+/-- Strict Ordering -/
+class SO (X : Type) where
+  rel : X → X → Prop
+  irref : ∀n : X, ¬(rel n n)
+  trans : ∀m n o : X, rel m n → rel n o → rel m o
+  asym : ∀m n : X, ¬(rel m n ∧ rel n m)
+
+infixl:70 " <ₛ " => SO.rel
+
+/-- The strict- or order inequality, abbreviated by `#`, defined by its underlying strict ordering `<ₛ` vía `x # y ↔ (x <ₛ y) ∨ (y <ₛ x)` for any `x y : X` and `[SO X]`. You can unfold it in the goal by writing `unfold orderIneq`, or unfold it in a hypothesis `h` by writing `unfold orderIneq at h`.
+
+Note that the meaning of `#` changes according to how `<ₛ` is defined. For the first, positive results, `<ₛ` will be just a ordinary strict ordering, given by the axioms of being
+irreflexive: `∀ a : X, ¬(a <ₛ a)`,
+transitive: `∀ a b c : X, a <ₛ b ∧ b <ₛ c → a <ₛ c`,
+assymmetric: `∀ a b : X, ¬(a <ₛ b ∧ b <ₛ a)` -/
+TheoremDoc orderIneq as "orderIneq" in "Levels"
+
+/-- The strict- or order inequality, abbreviated by `#`, defined by its underlying strict ordering `<ₛ` vía `x # y ↔ (x <ₛ y) ∨ (y <ₛ x)` for any `x y : X` and `[SO X]`. You can unfold it in the goal by writing `unfold orderIneq`, or unfold it in a hypothesis `h` by writing `unfold orderIneq at h`.
+
+Note that the meaning of `#` changes according to how `<ₛ` is defined. For the first, positive results, `<ₛ` will be just a ordinary strict ordering, given by the axioms of being
+irreflexive: `∀ a : X, ¬(a <ₛ a)`,
+transitive: `∀ a b c : X, a <ₛ b ∧ b <ₛ c → a <ₛ c`,
+assymmetric: `∀ a b : X, ¬(a <ₛ b ∧ b <ₛ a)` -/
+def orderIneq [SO X] : X → X → Prop := fun x y ↦ (x <ₛ y) ∨ (y <ₛ x)
+infixl:60 " # " => orderIneq
+
+/-- This is a counterexample structure for a strict inequality to be neither tight, nor cotransitive.  The `class` `Three` consists of a set `{x, y, z}` and a strict ordering relation on it, which we call `<ₛ` (you can type it with '<\_s') as well. The relation is given by the following:
+for `a b : Three`, we have `a <ₛ b` if and only if `a = .x ∧ b = .z`. You can refer to the elements of `Three` by writing `Three.x`, or `.x` for short, if the context is clear, and `Three.y` and `Three.Three` for the other two elements. -/
+DefinitionDoc Three as "Three"
+
+/-- The `x` element of the structure `Three`. -/
+DefinitionDoc Three.x as "Three.x"
+/-- The `y` element of the structure `Three`. -/
+DefinitionDoc Three.y as "Three.y"
+/-- The `z` element of the structure `Three`. -/
+DefinitionDoc Three.z as "Three.z"
+
+/- Proof the results are sharp by supplying counterexamples for other 'usual' properties -/
+/-- This is a counterexample structure for a strict inequality to be neither tight, nor cotransitive.  The `class` `Three` consists of a set `{x, y, z}` and a strict ordering relation on it, which we call `<ₛ` (you can type it with '<\_s') as well. The relation is given by the following:
+for `a b : Three`, we have `a <ₛ b` if and only if `a = .x ∧ b = .z`. You can refer to the elements of `Three` by writing `Three.x`, or `.x` for short, if the context is clear, and `Three.y` and `Three.Three` for the other two elements. -/
+inductive Three where
+  | x
+  | y
+  | z
+
+/-- Equipping Counterexample structure with Strict Ordering -/
+instance ThreeSO : SO Three where
+  rel := fun m n ↦ match m with
+    | .x => match n with
+      | .x => False
+      | .y => False
+      | .z => True
+    | .y => False
+    | .z => False
+  irref := by
+    intro n
+    cases n <;>
+    trivial
+  trans := by
+    intro m n o
+    cases m <;> cases n <;> cases o <;> trivial
+  asym := by
+    intro m n
+    cases m <;> cases n <;> trivial
+
+/-- Counterexample has decidable equality -/
+instance ThreeDeq : DecidableEq Three := by
+  intro m n
+  cases m <;> cases n <;> first
+  | right; rfl
+  | left; intro; contradiction
+
+/-- Counterexample Strict Ordering is decidable -/
+instance ThreeDe (m n : Three) : Decidable (ThreeSO.rel m n) := by
+  cases m <;>
+  cases n <;> unfold SO.rel
+  <;>
+  first
+  | exact instDecidableFalse
+  | exact instDecidableTrue

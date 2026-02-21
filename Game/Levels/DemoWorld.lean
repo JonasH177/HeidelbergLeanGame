@@ -1,8 +1,13 @@
-import Game.Levels.DemoWorld.L01_HelloWorld
+import Game.Levels.DemoWorld.L01
+import Game.Levels.DemoWorld.L02
+import Game.Levels.DemoWorld.L03
+import Game.Levels.DemoWorld.L04
+import Game.Levels.DemoWorld.L05
+import Game.Levels.DemoWorld.L06
 
 World "DemoWorld"
-Title "Demo World"
+Title "Decidability on the Naturals"
 
 Introduction "
-This introduction is shown before one enters level 1 of the demo world. Use markdown.
+In this world, the decidability of the equality relation on the natural numbers under the constructive framework is shown. Note that the naturals here are defined inductively, so n∈ℕ means `n=0 ∨ n=succ(k)` for some natural k∈ℕ.
 "

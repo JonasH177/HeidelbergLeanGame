@@ -1,4 +1,6 @@
 import Game.Levels.PrimeImpliesIrreducible
+import Game.Levels.DemoWorld
+import Game.Levels.StrIneqWorld
 
 -- Here's what we'll put on the title screen
 Title "Heidelberg Lean Game"
@@ -9,7 +11,10 @@ Welcome to the Heidelberg Lean Game!
 In this game, we explore a single world with 6 levels.
 The final level (Level 6) proves that every natural number which is prime is irreducible.
 
-More worlds will follow, so stay tuned!
+The second world treats the equality relation `=` on the natural numbers ℕ. The final theorem of the world will be to establish that the equality relation on the naturals is decidable, constructively.
+(Note: This means, that in vanilla lean, all the theorems do not require any of the axioms `[propext]`, `[Classical.choice]`, `[Quot.sound]`, that is, propositional extensionality, choice, and the soundness of the quotient construction.)
+
+The third world covers elemenetary properties of strict orderings and strict inequalities. In the first half we will prove positive results, and continue to show that these results are sharp in the second half of the world, by constructing a common counterexample.
 "
 
 Info "
