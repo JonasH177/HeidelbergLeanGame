@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.22.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-15\n"
+"POT-Creation-Date: 2026-03-08\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -59,6 +59,10 @@ msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
 msgid "Start by applying symmetry to reverse the equality."
+msgstr ""
+
+#: Game.Levels.StrictInequality.L01
+msgid "We will prove the foundational result that `#` is a consistent inequality."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
@@ -129,6 +133,10 @@ msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit
 msgid "Proving b is a Unit"
+msgstr ""
+
+#: Game.Levels.StrictInequality.L03
+msgid "Show that `#` is connected (see [here](https://en.wikipedia.org/wiki/Connected_relation)), that is, that if `x # y`, then either `x <ₛ y` or `y <ₛ x`."
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV06_FinalBoss
@@ -788,10 +796,6 @@ msgid "This Theorem, proved in Level 6, shows that if\n"
 "then p is irreducible."
 msgstr ""
 
-#: Game.Levels.StrictInequality.L01
-msgid "We will prove the foundational result that `#` is a consistent inequality. [[If this level crashes, reload the page. I do not know why this is happening. Should get fixed before shipping.]]"
-msgstr ""
-
 #: Game
 msgid "Game Template"
 msgstr ""
@@ -834,10 +838,6 @@ msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV05_AUnit
 msgid "Use 'rcases p_dvd_b with ⟨c, b_eq_pc⟩' to obtain c and the equality b = p * c."
-msgstr ""
-
-#: Game.Levels.StrictInequality.L03
-msgid "Show that `#` is connected, that is, that if `x # y`, then either"
 msgstr ""
 
 #: Game.Levels.PrimeImpliesIrreducible.LV04_BUnit

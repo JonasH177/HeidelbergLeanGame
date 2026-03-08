@@ -229,7 +229,7 @@ Note that the meaning of `#` changes according to how `<ₛ` is defined. For the
 irreflexive: `∀ a : X, ¬(a <ₛ a)`,
 transitive: `∀ a b c : X, a <ₛ b ∧ b <ₛ c → a <ₛ c`,
 assymmetric: `∀ a b : X, ¬(a <ₛ b ∧ b <ₛ a)` -/
-def orderIneq [SO X] : X → X → Prop := fun x y ↦ (x <ₛ y) ∨ (y <ₛ x)
+def orderIneq [soX : SO X] : X → X → Prop := fun x y ↦ (x <ₛ y) ∨ (y <ₛ x)
 infixl:60 " # " => orderIneq
 
 /-- This is a counterexample structure for a strict inequality to be neither tight, nor cotransitive.  The `class` `Three` consists of a set `{x, y, z}` and a strict ordering relation on it, which we call `<ₛ` (you can type it with '<\_s') as well. The relation is given by the following:

@@ -25,6 +25,15 @@ Statement sineq_three_not_tight : ¬(∀ a b : Three, ¬(a # b) → a = b) := by
   have : Three.x ≠ .y := by trivial
   exact this (h₀ h₁)
 
+/-
+(Unfortunately,) the prove can be significantly shortened by appealing to a global `contradiction` much earlier, as such:
+
+unfold orderIneq
+intro h
+have h₀ := h .x .y
+contradiction
+-/
+
 
 NewTactic trivial
 NewDefinition Three Three.x Three.y Three.z
