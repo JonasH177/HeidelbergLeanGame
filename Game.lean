@@ -24,6 +24,7 @@ Credits:
 
 - Heide Frank
 - Johannes Kadel
+- Levi Klein
 - Adriano Messina
 - Hanna Rothe
 - Alina Stock
@@ -33,8 +34,7 @@ Credits:
 
 The current version is being developed and maintained by:
 
-- Heide Frank
-- Levi Klein
+- Jonas Heese
 - Kevin Klinge
 - Florent Schaffhauser
 "
